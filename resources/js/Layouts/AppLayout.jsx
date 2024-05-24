@@ -1,9 +1,7 @@
 import React from "react";
-import { Link, usePage } from "@inertiajs/react";
+import { Link } from "@inertiajs/react";
 
 const AppLayout = ({ children }) => {
-    const { url } = usePage();
-
     return (
         <div>
             <nav className="bg-gray-800 py-4">
@@ -13,37 +11,17 @@ const AppLayout = ({ children }) => {
                             Berita
                         </Link>
                     </div>
-                    <div>
-                        <Link
-                            href="/"
-                            className={`text-white ${
-                                url.pathname === "/" ? "font-bold" : ""
-                            }`}
-                        >
+                    <div className="flex gap-4">
+                        <Link href="/" className="text-white">
                             Home
                         </Link>
-                        <Link
-                            href="/berita"
-                            className={`text-white ml-4 ${
-                                url.pathname === "/berita" ? "font-bold" : ""
-                            }`}
-                        >
+                        <Link href="/berita" className="text-white">
                             News
                         </Link>
-                        <Link
-                            href="/kontak"
-                            className={`text-white ml-4 ${
-                                url.pathname === "/kontak" ? "font-bold" : ""
-                            }`}
-                        >
+                        <Link href="/kontak" className="text-white">
                             Contact
                         </Link>
-                        <Link
-                            href="/login"
-                            className={`text-white ml-4 ${
-                                url.pathname === "/login" ? "font-bold" : ""
-                            }`}
-                        >
+                        <Link href="/login" className="text-white">
                             Login
                         </Link>
                     </div>
